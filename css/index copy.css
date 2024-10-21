@@ -1,0 +1,503 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: 16px/1.5 "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  color: #333;
+}
+ul,
+ol {
+  list-style: none;
+}
+em,
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+/* 全面base */
+/*!
+* @名称：base.css
+* @功能：1、重设浏览器默认样式
+*       2、设置通用原子类
+*/
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+  background: white;
+  color: black;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px \5b8b\4f53, arial, sans-serif;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+  text-align: inherit;
+}
+/* 去除默认边框 */
+fieldset,
+img {
+  border: none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+  display: block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: none;
+  font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+  text-decoration: underline;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+  text-decoration: none;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,
+*:focus {
+  outline: none;
+}
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+.clearfix {
+  zoom: 1;
+  /* for ie6 & ie7 */
+}
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 常用base.CSS */
+/* @charset "utf-8"; */
+/* CSS Document */
+body,
+ul,
+ol,
+dl,
+li,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  font-family: "Microsoft YaHei";
+}
+img {
+  border: none;
+}
+input,
+button,
+textarea,
+select {
+  *font-size: 100%;
+  border: none;
+}
+body {
+  background: #fff;
+  color: #5e5e5e;
+  font: 14px/24px Microsoft YaHei, SimSun, Arial;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*默认a标签样式*/
+a:link,
+a:visited {
+  color: #5e5e5e;
+  text-decoration: none;
+}
+a:hover {
+  /*color:#999;*/
+}
+a:hover {
+  color: #c9394a;
+  /*text-decoration: underline;*/
+}
+a:active {
+  color: #666;
+}
+/*浮动和清除浮动*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear {
+  zoom: 1;
+}
+.clear:after {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: visible;
+  clear: both;
+}
+/*显示隐藏*/
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+/*表格table和td有边框*/
+.boder_tl {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.boder_tl td {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.boder_bl {
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.boder_bl td {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.boder_tr {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.boder_tr td {
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.boder_br {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.boder_br td {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.txt_center {
+  text-align: center;
+}
+/*表格table和tr有边框*/
+.boder_ltr_trborder {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+.boder_ltr_trborder tr {
+  border-bottom: 1px solid #ccc;
+}
+body {
+  margin: 300px 0px 50px 0px;
+}
+.wrapper {
+  width: 213.33333333vw;
+  margin: 0 0;
+}
+.top a {
+  display: block;
+  position: fixed;
+  right: 9.33333333vw;
+  bottom: 13.33333333vw;
+  width: 16vw;
+  height: 16vw;
+  background-color: #2b2b2b;
+  border-radius: 50%;
+  line-height: 16vw;
+  text-align: center;
+  color: rgba(240, 248, 255, 0.5);
+  font-size: 5.33333333vw;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 13.33333333vw;
+  background-color: rgba(39, 39, 39, 0.11);
+  transition: all 0.3s;
+  z-index: 100;
+}
+.header .wrapper ul {
+  display: flex;
+}
+.header .wrapper ul li {
+  line-height: 13.33333333vw;
+  width: 5.33333333vw;
+  height: 13.33333333vw;
+  text-align: center;
+}
+.header .wrapper ul li:hover {
+  background-color: #4f3b3b;
+}
+.header .wrapper ul .active {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+.ldo {
+  width: 506.66666667vw;
+  height: 26.66666667vw;
+  margin: 0 auto;
+}
+.ldo ul {
+  display: flex;
+}
+.ldo ul li {
+  transform-style: preserve-3d;
+  /* transform: rotateX(-20deg) rotateY(30deg); */
+  transition: all 0.3s;
+}
+.ldo ul li a {
+  display: block;
+  width: 5.33333333vw;
+  height: 13.33333333vw;
+  background-color: #0e0e0e;
+  text-align: center;
+  line-height: 13.33333333vw;
+  color: #ffffff;
+}
+.ldo ul li a:last-child {
+  background-color: #4d0298;
+  color: white;
+  transform: translateY(-50px) rotateX(90deg) translateZ(25px) translateY(-25px);
+}
+.ldo ul li:hover {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+.bg {
+  background-color: #000;
+}
+.bg .title {
+  position: absolute;
+  top: 26.66666667vw;
+  width: 213.33333333vw;
+  color: #6d6d6d;
+}
+.bg .title h1 {
+  font-size: 5.6vw;
+  margin-bottom: 5.33333333vw;
+  color: #000;
+}
+.bg .content {
+  display: none;
+  margin: 0 auto;
+  width: 213.33333333vw;
+}
+.bg .content ul li img {
+  width: 213.33333333vw;
+  margin: 2.66666667vw 0;
+}
+.bg .active {
+  display: block !important;
+}
+.bg .first_page {
+  display: none;
+  height: 640vw;
+  background-color: #fff;
+}
+.bg .resume {
+  display: none;
+  width: 100%;
+  height: 640vw;
+  background-color: #000;
+  padding-top: 5.33333333vw;
+}
+.bg .resume .bg_su {
+  margin: 0 auto;
+  width: 213.33333333vw;
+  margin-top: -2.66666667vw;
+  margin-bottom: 13.33333333vw;
+}
+.bg .resume .bg_su img {
+  width: 213.33333333vw;
+}
+.bottom {
+  padding: 13.33333333vw;
+  width: 100%;
+  margin-top: 26.66666667vw;
+  margin-bottom: -26.66666667vw;
+  background-color: #dfdfdf37;
+}
+.bottom .wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.bottom .wrapper .wx img {
+  width: 24vw;
+  height: 24vw;
+  margin-right: 5.33333333vw;
+}
+.bottom .txt {
+  text-align: right;
+  margin-right: 5.33333333vw;
+}
+.bottom .txt h1 {
+  font-weight: 700;
+  color: #000;
+  line-height: 5.33333333vw;
+}
